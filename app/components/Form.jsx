@@ -10,13 +10,15 @@ const Form = ({ setOpen }) => {
   const [email,setEmail]=useState("")
   const [product,setProduct]=useState("")
   const [message,setMessage]=useState("")
+  const [loading,setLoading]=useState(false)
   
 
   const handleSubmit=async(e)=>{
     e.preventDefault();
     try{
+      setLoading(true)
       const formData = {
-        platform: "Matrix Tissue",
+        platform: "Matrix Tissue category citypage",
         platformEmail: "matrixtissues@gmail.com",
         name,
         phone,
@@ -56,15 +58,18 @@ const Form = ({ setOpen }) => {
       
       console.log("all good");
 
+      setOpen(!open)
     }catch(err){
       console.log(err);
+    }finally{
+      setLoading(false)
     }
   }
 
 
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center z-100 bg-black/40 backdrop-blur-sm px-4">
+    <div onClick={(e)=>e.stopPropagation()} className="fixed inset-0 flex items-center justify-center z-100 bg-black/40 backdrop-blur-sm px-4">
       <form onSubmit={handleSubmit} className="relative w-full max-w-md  bg-white/90 backdrop-blur-lg rounded-2xl shadow-xl p-3 flex flex-col text-base text-slate-800 ">
         {/* ❌ Close Button */}
         <button
@@ -160,9 +165,10 @@ const Form = ({ setOpen }) => {
           {/* BUTTON */}
           <button
             type="submit"
+            disabled={loading}
             className="mt-4 bg-red-500 hover:bg-red-600 text-white py-2 w-full rounded-full text-base font-medium transition"
           >
-            Submit Form
+            {loading? "Submiting Form":"Submit Form"}
           </button>
         </div>
       </form>

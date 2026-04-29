@@ -14,7 +14,7 @@ const EnquiryForm = () => {
     e.preventDefault();
     try {
       const formData = {
-        platform: "Matrix Tissue",
+        platform: "Matrix Tissue category citypage ",
         platformEmail: "matrixtissues@gmail.com",
         name,
         phone,

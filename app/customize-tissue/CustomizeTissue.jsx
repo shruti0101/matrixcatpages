@@ -42,6 +42,7 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import Form from "../components/Form";
+import MobileStickyFooter from "../components/layout/MobileFooter";
 
 const CustomizeTissue = () => {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -118,6 +119,7 @@ const CustomizeTissue = () => {
       {open && <Form setOpen={setOpen} />}
 
       <div>
+        <MobileStickyFooter></MobileStickyFooter>
         {/* hero done */}
         <section className="bg-[#F2A99B] flex flex-col gap-1 items-center px-2 py-5 lg:py-5">
           <p className="font-bebas text-3xl text-white md:text-4xl">
@@ -203,7 +205,7 @@ const CustomizeTissue = () => {
           </div>
 
           <a
-            href="https://matrixtissues.com/our-products/"
+            href="https://matrixtissues.com/product-category/customize/"
             className="mb:mt-7 mt-4 bg-red-700 text-white px-8 py-2 rounded text-xl md:scale-110 lg:px-20 lg:text-2xl"
           >
             SHOW MORE
@@ -226,13 +228,13 @@ const CustomizeTissue = () => {
             </p>
             <p className="text-lg md:text-xl text-gray-700 leading-6 md:leading-7">
               Today, we are recognized as a reliable{" "}
-              <span className="font-bold">
+              
                 customized tissue manufacturer in Delhi,
-              </span>{" "}
+              {" "}
               offering tailored solutions for{" "}
-              <span className="font-bold">
+             
                 hotels, restaurants, corporates, events, and retail brands.
-              </span>{" "}
+              {" "}
               Our customized facial tissue and paper napkin range is crafted to
               deliver both functionality and premium presentation, making every
               product a reflection of your brand.
@@ -240,18 +242,18 @@ const CustomizeTissue = () => {
             <p className="text-lg md:text-xl text-gray-700 leading-6 md:leading-7">
               With strong industry expertise, Matrix Tissue has become a
               dependable{" "}
-              <span className="font-bold">
+               
                 customized tissue supplier in Delhi,
-              </span>{" "}
+              {" "}
               serving both bulk and wholesale requirements. We focus on
               delivering innovative, high-quality, and fully branded tissue
               solutions that meet modern hygiene and marketing needs. Our
               commitment to excellence makes us a preferred choice for
               businesses looking for
-              <span className="font-bold leading-6 md:leading-7">
+              
                 {" "}
                 customized facial tissue and paper napkins in Delhi.
-              </span>
+            
             </p>
           </div>
         </section>
@@ -420,7 +422,7 @@ const CustomizeTissue = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <button
-                onClick={() => setOpen(!open)}
+                onClick={() => setOpen(true)}
                 className="w-full sm:w-auto bg-white text-red-700 font-bold py-3 px-10 rounded-xl text-lg hover:bg-gray-100 transition-colors shadow-lg"
               >
                 Get Free Quote
@@ -506,7 +508,7 @@ const CustomizeTissue = () => {
                   </p>
                 </div>
         
-                <div className="grid gap-11 grid-cols-2 md:grid-cols-7 md:items-center lg:gap-5">
+             <div className="grid gap-11 grid-cols-2 md:grid-cols-6 md:items-center lg:gap-15">
                   {[
                     "/ecom2/logo1.webp",
                     "/ecom2/logo2.webp",
@@ -514,7 +516,7 @@ const CustomizeTissue = () => {
                     "/ecom2/logo5.webp",
                     "/ecom2/logo8.webp",
                     "/ecom2/logo.webp",
-                    "/ecom2/cropped-matrix-logo-Photoroom-2.png",
+                    
                   ].map((feature, index) => (
                     <Image
                       src={feature}
@@ -605,12 +607,12 @@ const CustomizeTissue = () => {
                 <SwiperSlide key={index}>
                   <div className="bg-white p-6 rounded-2xl border border-gray-200 flex flex-col justify-between hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-[220px]">
                     {/* Question */}
-                    <h3 className="text-base md:text-lg font-semibold text-red-700 mb-3 line-clamp-2">
+                    <h3 className="text-lg md:text-lg font-semibold text-red-700 mb-3 line-clamp-2">
                       {item.question}
                     </h3>
 
                     {/* Answer */}
-                    <p className="text-gray-600 text-sm md:text-base leading-6 line-clamp-4">
+                    <p className="text-gray-600 text-lg md:text-lg leading-6 line-clamp-4">
                       {item.answer}
                     </p>
 

@@ -30,9 +30,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
-import Form from "./components/Form";
-import EnquiryForm from "./components/EnquiryForm";
-
+import Form from "../components/Form";
+import EnquiryForm from "../components/EnquiryForm";
+import MobileStickyFooter from "../components/layout/MobileFooter";
 
 // const exploreLinks = [
 //   { label: "Home", href: "/" },
@@ -126,6 +126,7 @@ const Home = () => {
   return (
     <>      {open && <Form setOpen={setOpen}/>}
     <div>
+      <MobileStickyFooter></MobileStickyFooter>
       {/* hero  */}
       <section className="bg-[#F2A99B] flex flex-col gap-1 items-center px-2 py-4 lg:py-6">
         <p className="font-bebas text-2xl text-white md:text-4xl">
@@ -412,7 +413,7 @@ const Home = () => {
           </p>
         </div>
 
-        <div className="grid gap-11 grid-cols-2 md:grid-cols-7 md:items-center lg:gap-5">
+             <div className="grid gap-11 grid-cols-2 md:grid-cols-6 md:items-center lg:gap-15">
           {[
             "/ecom2/logo1.webp",
             "/ecom2/logo2.webp",
@@ -420,7 +421,7 @@ const Home = () => {
             "/ecom2/logo5.webp",
             "/ecom2/logo8.webp",
             "/ecom2/logo.webp",
-            "/ecom2/cropped-matrix-logo-Photoroom-2.png",
+            ,
           ].map((feature, index) => (
             <Image
               src={feature}
@@ -517,61 +518,56 @@ const Home = () => {
             }}
           >
             {[
-              {
-                quote:
-                  "Matrix Tissue is a highly reliable facial tissue supplier in Delhi. The quality is consistently soft and perfect for our daily office use.",
-                author: "Corporate Client",
-              },
-              {
-                quote:
-                  "We’ve been sourcing bulk facial tissue for our hotel chain, and their service is always on time with excellent pricing.",
-                author: "Hotel Manager",
-              },
-              {
-                quote:
-                  "One of the best facial tissue manufacturers in Delhi NCR. The products are hygienic and ideal for healthcare environments.",
-                author: "Hospital Administrator",
-              },
-              {
-                quote:
-                  "Their customized facial tissue packaging helped us build our brand presence. Highly professional team.",
-                author: "Retail Distributor",
-              },
-              {
-                quote:
-                  "Premium quality facial tissue with great absorbency. Truly a dependable supplier for bulk requirements.",
-                author: "Business Owner",
-              },
-              {
-                quote:
-                  "Fast delivery and consistent quality make Matrix Tissue our go-to facial tissue supplier in Delhi.",
-                author: "Office Admin",
-              },
-              {
-                quote:
-                  "Soft, skin-friendly facial tissue products that meet our salon’s hygiene standards perfectly.",
-                author: "Salon Owner",
-              },
-              {
-                quote:
-                  "Affordable pricing with top-notch quality. One of the most trusted facial tissue suppliers we’ve worked with.",
-                author: "Wholesale Buyer",
-              },
-            ].map((item, index) => (
+  
+  {
+    quote:
+      "We’ve been sourcing bulk facial tissue for our hotel chain, and their service is always on time with excellent pricing.",
+    author: "Priya Mehta",
+  },
+  
+  {
+    quote:
+      "Their customized facial tissue packaging helped us build our brand presence. Highly professional team.",
+    author: "Neha Kapoor",
+  },
+  {
+    quote:
+      "Premium quality facial tissue with great absorbency. Truly a dependable supplier for bulk requirements.",
+    author: "Vikram Singh",
+  },
+  {
+    quote:
+      "Fast delivery and consistent quality make Matrix Tissue our go-to facial tissue supplier in Delhi.",
+    author: "Amit Gupta",
+  },
+  {
+    quote:
+      "Soft, skin-friendly facial tissue products that meet our salon’s hygiene standards perfectly.",
+    author: "Shalini Joshi",
+  },
+  {
+    quote:
+      "Affordable pricing with top-notch quality. One of the most trusted facial tissue suppliers we’ve worked with.",
+    author: "Rakesh Yadav",
+  },
+].map((item, index) => (
               <SwiperSlide key={index}>
-                <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100 flex flex-col justify-between hover:shadow-xl transition-all duration-300 hover:-translate-y-1 relative group h-50">
-                  <Quote className="absolute top-4 right-4 text-red-200 w-6 h-6 opacity-50 group-hover:opacity-100 transition-opacity" />
+              <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100 flex flex-col hover:shadow-xl transition-all duration-300 hover:-translate-y-1 relative group h-50">
+  
+  <Quote className="absolute top-4 right-4 text-red-200 w-6 h-6 opacity-50 group-hover:opacity-100 transition-opacity" />
 
-                  <p className="text-gray-700 italic mb-6 leading-6 md:leading-7 text-sm md:text-base">
-                    "{item.quote}"
-                  </p>
+  {/* QUOTE takes full height space */}
+  <p className="text-gray-700 flex-1 italic mb-6 leading-6 md:leading-7 text-lg md:text-lg">
+    "{item.quote}"
+  </p>
 
-                  <div className="border-t border-red-100 pt-3">
-                    <p className="font-bold text-red-700 text-xs md:text-sm tracking-wide uppercase">
-                      — {item.author}
-                    </p>
-                  </div>
-                </div>
+  {/* AUTHOR stays at bottom */}
+  <div className="border-t border-red-100 pt-3 mt-auto">
+    <p className="font-bold text-red-700 text-lg md:text-md tracking-wide uppercase">
+      — {item.author}
+    </p>
+  </div>
+</div>
               </SwiperSlide>
             ))}
           </Swiper>

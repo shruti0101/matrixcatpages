@@ -23,6 +23,8 @@ import "swiper/css";
 import "swiper/css/pagination";
 import Form from "../components/Form";
 import { FaWhatsapp } from "react-icons/fa";
+import Link from "next/link";
+import MobileStickyFooter from "../components/layout/MobileFooter";
 
 
 const PaperNapkin = () => {
@@ -34,6 +36,7 @@ const PaperNapkin = () => {
     <> 
       {open && <Form setOpen={setOpen}/>} 
       <div>
+        <MobileStickyFooter></MobileStickyFooter>
       {/* hero done  */}
       <section className="bg-[#F2A99B] flex flex-col gap-1 items-center px-2 py-5 lg:py-6">
         <p className="font-bebas text-2xl text-white md:text-4xl">
@@ -63,12 +66,12 @@ const PaperNapkin = () => {
         </div>
 
         <div className="flex gap-5 mt-3 md:gap-14 pb-2">
-          <button onClick={()=>setOpen(!open)}  className="bg-red-500 hover:bg-red-600 px-5 py-1 rounded text-white text-xl md:scale-115">
+          <button onClick={()=>setOpen(true)}  className="bg-red-500 hover:bg-red-600 px-5 py-1 rounded text-white text-xl md:scale-115">
             Get Free Quote
           </button>
-          <button className="bg-red-500 hover:bg-red-500 px-5 py-1 rounded text-white text-xl md:scale-115">
+          <Link href={"https://matrixtissues.com/contact-us/"} className="bg-red-500 hover:bg-red-500 px-5 py-1 rounded text-white text-xl md:scale-115">
             Contact Us
-          </button>
+          </Link>
         </div>
       </section>
       
@@ -103,9 +106,9 @@ const PaperNapkin = () => {
           ))}
         </div>
 
-        <button className="mt-4 md:mt-7 bg-red-700 text-white px-8 py-2 rounded text-xl md:scale-110 lg:px-20 lg:text-2xl">
+        <Link href="https://matrixtissues.com/product-category/paper-napkin/" className="mt-4 md:mt-7 bg-red-700 text-white px-8 py-2 rounded text-xl md:scale-110 lg:px-20 lg:text-2xl">
           SHOW MORE
-        </button>
+        </Link>
       </section>
 
       {/* cta done  */}
@@ -139,32 +142,32 @@ const PaperNapkin = () => {
           Paper Napkin in Delhi
         </h2>
         <div className="max-w-5xl text-center space-y-3 md:space-y-4">
-          <p className="text-lg md:text-2xl text-black leading-6 md:leading-7">
+          <p className="text-md md:text-2xl text-black leading-6 md:leading-7">
             Matrix Tissue started its journey in 2008 under the leadership of
             Mr. Praveen Bhagwat with a vision to deliver high-quality hygiene
             products. Today, we are a recognized{" "}
-            <span className="font-bold">
+            
               paper napkin manufacturer in Delhi
-            </span>
+            
             , offering a wide range of premium{" "}
-            <span className="font-bold">paper napkin products</span> known for
+            paper napkin products  known for
             their softness, strength, and superior absorbency. Our products are
             widely used across restaurants, hotels, offices, and catering
             businesses, making us a reliable choice for{" "}
-            <span className="font-bold">paper napkin supply in Delhi.</span>
+           paper napkin supply in Delhi.
           </p>
 
           <p className="text-lg md:text-2xl text-black leading-6 md:leading-7">
             With years of experience and a strong focus on quality, Matrix
             Tissue has become a trusted{" "}
-            <span className="font-bold">paper napkin supplier in Delhi</span>{" "}
+            paper napkin supplier in Delhi{" "}
             for both retail and bulk requirements. We specialize in delivering{" "}
-            <span className="font-bold">customized paper napkins,</span>{" "}
+             customized paper napkins,{" "}
             eco-friendly solutions, and consistent bulk supply to meet diverse
             business needs. Our commitment to hygiene, timely delivery, and
             competitive pricing makes us a preferred partner for businesses
             looking for the best
-            <span className="font-bold">paper napkin in Delhi.</span>
+            paper napkin in Delhi.  
           </p>
         </div>
       </section>
@@ -311,7 +314,7 @@ const PaperNapkin = () => {
                </p>
              </div>
      
-             <div className="grid gap-11 grid-cols-2 md:grid-cols-7 md:items-center lg:gap-5">
+             <div className="grid gap-11 grid-cols-2 md:grid-cols-6 md:items-center lg:gap-15">
                {[
                  "/ecom2/logo1.webp",
                  "/ecom2/logo2.webp",
@@ -319,7 +322,7 @@ const PaperNapkin = () => {
                  "/ecom2/logo5.webp",
                  "/ecom2/logo8.webp",
                  "/ecom2/logo.webp",
-                 "/ecom2/cropped-matrix-logo-Photoroom-2.png",
+                 ,
                ].map((feature, index) => (
                  <Image
                    src={feature}
@@ -416,7 +419,7 @@ const PaperNapkin = () => {
             Connect with Matrix Tissue today and get high-quality paper napkins
             with fast delivery and unbeatable pricing.
           </p>
-          <button onClick={()=>setOpen(!open)}  className="bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-12 rounded-xl text-xl md:text-2xl transition-all duration-300 transform hover:scale-105 shadow-2xl">
+          <button onClick={()=>setOpen(true)}  className="bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-12 rounded-xl text-xl md:text-2xl transition-all duration-300 transform hover:scale-105 shadow-2xl">
             Request Quote Now
           </button>
         </div>
@@ -446,14 +449,12 @@ const PaperNapkin = () => {
                 <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100 flex flex-col justify-between hover:shadow-xl transition-all duration-300 hover:-translate-y-1 relative group h-50">
                   <Quote className="absolute top-4 right-4 text-red-200 w-6 h-6 opacity-50 group-hover:opacity-100 transition-opacity" />
 
-                  <p className="text-gray-700 italic mb-6 leading-6 md:leading-7 text-sm md:text-base">
+                  <p className="text-gray-700 italic mb-6 leading-6 md:leading-7 text-lg md:text-lg">
                     "{item.quote}"
                   </p>
 
                   <div className="border-t border-red-100 pt-3">
-                    <p className="font-bold text-red-700 text-xs md:text-sm tracking-wide uppercase">
-                      — {item.author}
-                    </p>
+                    
                   </div>
                 </div>
               </SwiperSlide>
@@ -521,5 +522,3 @@ const PaperNapkin = () => {
 };
 
 export default PaperNapkin;
-
-

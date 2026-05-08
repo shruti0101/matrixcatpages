@@ -3,7 +3,10 @@ import React, { useState } from "react";
 import Image from "next/image";
 import axios from "axios";
 
-const EnquiryForm = () => {
+const EnquiryForm = ({totalwords=[]}) => {
+
+  let [first = "Facial", second = "Tissue"] = totalwords;
+
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
@@ -14,7 +17,7 @@ const EnquiryForm = () => {
     e.preventDefault();
     try {
       const formData = {
-        platform: "Matrix Tissue category citypage ",
+        platform: "Matrix Tissue",
         platformEmail: "matrixtissues@gmail.com",
         name,
         phone,
@@ -61,7 +64,8 @@ const EnquiryForm = () => {
 
   return (
     <>
-      <section className="px-5 py-12 md:py-20 lg:px-10 bg-white flex flex-col items-center lg:py-5">
+    
+      <section className="px-5 py-3 md:py-20 lg:px-10 bg-white flex flex-col items-center lg:py-5">
         <form
           onSubmit={handleSubmit}
           className="w-full max-w-7xl bg-gray-50 rounded-[2.5rem] border border-gray-200 shadow-sm transition-all hover:shadow-md overflow-hidden flex flex-col lg:flex-row"
@@ -82,15 +86,15 @@ const EnquiryForm = () => {
           </div>
 
           {/* Right Side: Form Content */}
-          <div className="w-full lg:w-7/12 p-4 md:p-8">
+          <div className="w-full lg:w-7/12 p-3 md:p-4 md:p-8">
             <div className="text-left mb-3 md:mb-6">
               <h2 className="text-3xl md:text-5xl font-bebas text-gray-900 mb-2 tracking-wide">
-                Get the Best Facial Tissue in Delhi Today
+                Get the Best <span className="capitalize"> {first} {second} </span> in Delhi Today
               </h2>
-              <p className="text-xl md:text-2xl font-bold text-red-700 mb-2">
+              <p className="text-xl md:text-2xl font-bold text-red-700 leading-6 mb-2">
                 Looking for a trusted facial tissue in Delhi?
               </p>
-              <p className="text-gray-600 text-lg leading-6">
+              <p className="text-gray-600 text-lg leading-5 md:leading-6">
                 Matrix Tissue offers premium quality, soft, and hygienic facial
                 tissue products at competitive prices. Fill out the form below
                 and get a quick quote.

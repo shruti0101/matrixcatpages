@@ -448,6 +448,57 @@ export const whyChooseUsPaperNapkin = [
   },
 ];
 
+export const testimonialsData = [
+  {
+    title: "Excellent Quality & Custom Branding",
+    review:
+      "Matrix Tissue delivered exactly what we needed for our brand. The customized facial tissues and napkins were of premium quality with perfect logo printing.",
+    author: "Hotel Manager, Delhi NCR",
+  },
+  {
+    title: "Reliable Bulk Supply Partner",
+    review:
+      "We regularly order in bulk, and their delivery is always on time. Quality consistency makes them our preferred supplier.",
+    author: "Restaurant Owner, Delhi",
+  },
+  {
+    title: "Great Customization Options",
+    review:
+      "We got fully customized tissue boxes and napkins for our café. The branding came out very professional and attractive.",
+    author: "Cafe Owner, South Delhi",
+  },
+  {
+    title: "Soft & Premium Quality Products",
+    review:
+      "The tissue quality is very soft and hygienic. Our customers really appreciate the premium feel.",
+    author: "Corporate Office Admin",
+  },
+  {
+    title: "Best Service in Delhi NCR",
+    review:
+      "Quick response, smooth ordering process, and excellent support team. Highly recommended for bulk buyers.",
+    author: "Distributor, Delhi NCR",
+  },
+  {
+    title: "Perfect for Events & Catering",
+    review:
+      "We used their customized napkins for multiple events, and the quality and presentation were outstanding.",
+    author: "Event Planner",
+  },
+  {
+    title: "Affordable & High Quality",
+    review:
+      "Competitive pricing without compromising on quality. Perfect balance for bulk procurement.",
+    author: "Procurement Head, Hospitality Sector",
+  },
+  {
+    title: "Trusted Long-Term Supplier",
+    review:
+      "We have been working with Matrix Tissue for years. They are consistent, reliable, and very professional.",
+    author: "Facility Manager, Gurgaon",
+  },
+];
+
 export const faqs = [
   {
     question:

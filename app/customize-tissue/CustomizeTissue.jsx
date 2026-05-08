@@ -25,7 +25,8 @@ import {
   whyChooseUsCustmizeFaceTissue,
   premiumCustomizedFacialTissue,
   testimonialCustomerTissue,
-  faqsCustomizeFaceTissue,
+  testimonialsData,
+  faqsCustomizeFaceTissue
 } from "@/data";
 import {
   BookCheck,
@@ -42,9 +43,16 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import Form from "../components/Form";
-import MobileStickyFooter from "../components/layout/MobileFooter";
+import EnquiryForm from "../components/EnquiryForm";
+import { useParams, usePathname } from "next/navigation";
 
 const CustomizeTissue = () => {
+
+  const path = usePathname();
+  const totalwords = path.split("/")[1].split("-");
+
+  
+
   const [activeIndex, setActiveIndex] = useState(null);
   const [open, setOpen] = useState(null);
 
@@ -119,7 +127,6 @@ const CustomizeTissue = () => {
       {open && <Form setOpen={setOpen} />}
 
       <div>
-        <MobileStickyFooter></MobileStickyFooter>
         {/* hero done */}
         <section className="bg-[#F2A99B] flex flex-col gap-1 items-center px-2 py-5 lg:py-5">
           <p className="font-bebas text-3xl text-white md:text-4xl">
@@ -141,11 +148,15 @@ const CustomizeTissue = () => {
           <div className="grid grid-cols-3 mt-5 gap-2 text-white md:gap-8 md:mt-6">
             <div className="flex flex-col items-center gap-1 ">
               <MousePointerClick className="md:h-9 md:w-9" />
-              <p className="md:text-xl text-center">CUSTOM BRAND PRINTING AVAILABLE</p>
+              <p className="md:text-xl text-center">
+                CUSTOM BRAND PRINTING AVAILABLE
+              </p>
             </div>
             <div className="flex flex-col items-center gap-1 text-center">
               <Wind className="md:h-9 md:w-9" />
-              <p className="md:text-xl text-center">PREMIUM SOFT QUALITY MATERIAL</p>
+              <p className="md:text-xl text-center">
+                PREMIUM SOFT QUALITY MATERIAL
+              </p>
             </div>
             <div className="flex flex-col items-center gap-1 ">
               <Package className="md:h-9 md:w-9" />
@@ -227,33 +238,21 @@ const CustomizeTissue = () => {
               hygiene.
             </p>
             <p className="text-lg md:text-xl text-gray-700 leading-6 md:leading-7">
-              Today, we are recognized as a reliable{" "}
-              
-                customized tissue manufacturer in Delhi,
-              {" "}
-              offering tailored solutions for{" "}
-             
-                hotels, restaurants, corporates, events, and retail brands.
-              {" "}
-              Our customized facial tissue and paper napkin range is crafted to
-              deliver both functionality and premium presentation, making every
-              product a reflection of your brand.
+              Today, we are recognized as a reliable customized tissue
+              manufacturer in Delhi, offering tailored solutions for hotels,
+              restaurants, corporates, events, and retail brands. Our customized
+              facial tissue and paper napkin range is crafted to deliver both
+              functionality and premium presentation, making every product a
+              reflection of your brand.
             </p>
             <p className="text-lg md:text-xl text-gray-700 leading-6 md:leading-7">
               With strong industry expertise, Matrix Tissue has become a
-              dependable{" "}
-               
-                customized tissue supplier in Delhi,
-              {" "}
-              serving both bulk and wholesale requirements. We focus on
-              delivering innovative, high-quality, and fully branded tissue
-              solutions that meet modern hygiene and marketing needs. Our
-              commitment to excellence makes us a preferred choice for
-              businesses looking for
-              
-                {" "}
-                customized facial tissue and paper napkins in Delhi.
-            
+              dependable customized tissue supplier in Delhi, serving both bulk
+              and wholesale requirements. We focus on delivering innovative,
+              high-quality, and fully branded tissue solutions that meet modern
+              hygiene and marketing needs. Our commitment to excellence makes us
+              a preferred choice for businesses looking for customized facial
+              tissue and paper napkins in Delhi.
             </p>
           </div>
         </section>
@@ -291,7 +290,6 @@ const CustomizeTissue = () => {
           </div>
         </section>
 
-           
         <section className="px-5 py-5 md:py-20 lg:px-24 bg-gray-50 flex flex-col items-center lg:py-6">
           <h2 className="text-3xl md:text-5xl font-bebas text-gray-900 mb-2 md:mb-4 text-center tracking-wide">
             Customized Tissue Gifting Collection
@@ -316,7 +314,10 @@ const CustomizeTissue = () => {
                   for corporate hampers, client gifting, and brand promotions.
                 </p>
               </div>
-              <a href="https://matrixtissues.com/product-category/customize/"  className="text-red-600 font-semibold text-sm inline-flex items-center gap-1">
+              <a
+                href="https://matrixtissues.com/product-category/customize/"
+                className="text-red-600 font-semibold text-sm inline-flex items-center gap-1"
+              >
                 View Details →
               </a>
             </div>
@@ -332,7 +333,10 @@ const CustomizeTissue = () => {
                   superior softness—ideal for premium gifting.
                 </p>
               </div>
-              <a href="https://matrixtissues.com/product-category/customize/"  className="text-red-600 font-semibold text-sm inline-flex items-center gap-1">
+              <a
+                href="https://matrixtissues.com/product-category/customize/"
+                className="text-red-600 font-semibold text-sm inline-flex items-center gap-1"
+              >
                 View Details →
               </a>
             </div>
@@ -348,7 +352,10 @@ const CustomizeTissue = () => {
                   Diwali, New Year, and corporate celebrations.
                 </p>
               </div>
-              <a href="https://matrixtissues.com/product-category/customize/"  className="text-red-600 font-semibold text-sm inline-flex items-center gap-1">
+              <a
+                href="https://matrixtissues.com/product-category/customize/"
+                className="text-red-600 font-semibold text-sm inline-flex items-center gap-1"
+              >
                 View Details →
               </a>
             </div>
@@ -364,7 +371,10 @@ const CustomizeTissue = () => {
                   corporate events to enhance presentation and branding.
                 </p>
               </div>
-              <a href="https://matrixtissues.com/product-category/customize/"  className="text-red-600 font-semibold text-sm inline-flex items-center gap-1">
+              <a
+                href="https://matrixtissues.com/product-category/customize/"
+                className="text-red-600 font-semibold text-sm inline-flex items-center gap-1"
+              >
                 View Details →
               </a>
             </div>
@@ -496,39 +506,39 @@ const CustomizeTissue = () => {
         </section>
 
         {/* Also avaiable on done */}
-         <section className="px-5 py-6 md:py-20 lg:px-24 bg-white flex flex-col items-center lg:py-8">
-                <div className="text-center ">
-                  <h2 className="text-5xl md:text-5xl font-bebas text-gray-900  mb-3 tracking-wide">
-                    Also Available On
-                  </h2>
-                  <p className="text-xl md:text-2xl leading-6 md:leading-7 font-semibold text-red-700 mb-5">
-                    Matrix Tissue is proudly listed on leading B2B platforms, making it
-                    easier for buyers to connect with a trusted facial tissue
-                    manufacturer in Delhi.
-                  </p>
-                </div>
-        
-             <div className="grid gap-11 grid-cols-2 md:grid-cols-6 md:items-center lg:gap-15">
-                  {[
-                    "/ecom2/logo1.webp",
-                    "/ecom2/logo2.webp",
-                    "/ecom2/logo4.webp",
-                    "/ecom2/logo5.webp",
-                    "/ecom2/logo8.webp",
-                    "/ecom2/logo.webp",
-                    
-                  ].map((feature, index) => (
-                    <Image
-                      src={feature}
-                      alt="image of ecom"
-                      width={1000}
-                      height={1000}
-                      key={index}
-                      className="h-28 w-28 "
-                    />
-                  ))}
-                </div>
-              </section>
+        <section className="px-5 py-6 md:py-20 lg:px-24 bg-white flex flex-col items-center lg:py-8">
+          <div className="text-center ">
+            <h2 className="text-5xl md:text-5xl font-bebas text-gray-900  mb-3 tracking-wide">
+              Also Available On
+            </h2>
+            <p className="text-xl md:text-2xl leading-6 md:leading-7 font-semibold text-red-700 mb-5">
+              Matrix Tissue is proudly listed on leading B2B platforms, making
+              it easier for buyers to connect with a trusted facial tissue
+              manufacturer in Delhi.
+            </p>
+          </div>
+
+          <div className="grid gap-11 grid-cols-2 md:grid-cols-7 md:items-center lg:gap-5">
+            {[
+              "/ecom2/logo1.webp",
+              "/ecom2/logo2.webp",
+              "/ecom2/logo4.webp",
+              "/ecom2/logo5.webp",
+              "/ecom2/logo8.webp",
+              "/ecom2/logo.webp",
+              "/ecom2/cropped-matrix-logo-Photoroom-2.png",
+            ].map((feature, index) => (
+              <Image
+                src={feature}
+                alt="image of ecom"
+                width={1000}
+                height={1000}
+                key={index}
+                className="h-28 w-28 "
+              />
+            ))}
+          </div>
+        </section>
 
         {/* premium facial tissue collection done */}
         <section className="px-5 py-6 md:py-20 lg:px-24 bg-gray-50 flex flex-col items-center lg:py-6">
@@ -550,7 +560,10 @@ const CustomizeTissue = () => {
                     {item.desc}
                   </p>
                 </div>
-                <a href="https://matrixtissues.com/product-category/customize/" className="text-red-600 font-semibold text-sm inline-flex items-center gap-1">
+                <a
+                  href="https://matrixtissues.com/product-category/customize/"
+                  className="text-red-600 font-semibold text-sm inline-flex items-center gap-1"
+                >
                   View Collection →
                 </a>
               </div>
@@ -560,7 +573,7 @@ const CustomizeTissue = () => {
           {/* Bulk Supply CTA */}
           <div className="mt-5 md:mt-16 w-full max-w-5xl bg-gradient-to-r from-red-700 to-red-900 rounded-3xl p-8 md:p-9 text-center text-white shadow-xl">
             <h3 className="text-4xl md:text-5xl font-bebas mb-4 tracking-wide">
-              Need Bulk Facial Tissue Supply?
+              Need Bulk Customize Tissue Supply?
             </h3>
             <p className="text-lg md:text-xl mb-6 text-red-50 max-w-3xl mx-auto leading-5 md:leading-6">
               Partner with a reliable facial tissue manufacturer in Delhi NCR
@@ -603,22 +616,27 @@ const CustomizeTissue = () => {
                 1280: { slidesPerView: 4 },
               }}
             >
-              {faqsCustomizeFaceTissue.map((item, index) => (
+              {testimonialsData.map((item, index) => (
                 <SwiperSlide key={index}>
-                  <div className="bg-white p-6 rounded-2xl border border-gray-200 flex flex-col justify-between hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-[220px]">
-                    {/* Question */}
-                    <h3 className="text-lg md:text-lg font-semibold text-red-700 mb-3 line-clamp-2">
-                      {item.question}
+                  <div className="bg-white rounded-3xl border border-gray-200 p-6 h-[280px] flex flex-col justify-between shadow-sm hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                    <div className="text-5xl text-red-500 leading-none">“</div>
+
+                    {/* TITLE */}
+                    <h3 className="text-lg md:text-xl font-semibold text-gray-900 mt-2 line-clamp-2">
+                      {item.title}
                     </h3>
 
-                    {/* Answer */}
-                    <p className="text-gray-600 text-lg md:text-lg leading-6 line-clamp-4">
-                      {item.answer}
+                    {/* REVIEW */}
+                    <p className="text-gray-600 text-sm md:text-base leading-6 mt-3 line-clamp-5">
+                      {item.review}
                     </p>
 
-                    {/* <div className="border-t border-gray-100 mt-4 pt-2">
-        <span className="text-xs text-gray-400">FAQ</span>
-      </div> */}
+                    {/* AUTHOR */}
+                    <div className="border-t pt-4 mt-4">
+                      <p className="text-sm font-medium text-red-600">
+                        — {item.author}
+                      </p>
+                    </div>
                   </div>
                 </SwiperSlide>
               ))}
@@ -667,9 +685,8 @@ const CustomizeTissue = () => {
             })}
           </div>
         </section>
-
-        
       </div>
+      <EnquiryForm totalwords={totalwords} />
     </>
   );
 };

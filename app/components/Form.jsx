@@ -12,6 +12,7 @@ const Form = ({ setOpen }) => {
   const [message,setMessage]=useState("")
   const [loading,setLoading]=useState(false)
   
+  
 
   const handleSubmit=async(e)=>{
     e.preventDefault();
@@ -55,14 +56,14 @@ const Form = ({ setOpen }) => {
 
        
       } 
-      
+      setLoading(false)
       console.log("all good");
 
-      setOpen(!open)
+      setOpen(false)
     }catch(err){
       console.log(err);
     }finally{
-      setLoading(false)
+      setLoading(false); 
     }
   }
 
@@ -168,7 +169,7 @@ const Form = ({ setOpen }) => {
             disabled={loading}
             className="mt-4 bg-red-500 hover:bg-red-600 text-white py-2 w-full rounded-full text-base font-medium transition"
           >
-            {loading? "Submiting Form":"Submit Form"}
+            {loading?"Submitting Form":"Submit Form"}
           </button>
         </div>
       </form>

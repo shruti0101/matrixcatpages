@@ -24,19 +24,21 @@ import "swiper/css/pagination";
 import Form from "../components/Form";
 import { FaWhatsapp } from "react-icons/fa";
 import Link from "next/link";
-import MobileStickyFooter from "../components/layout/MobileFooter";
+import EnquiryForm from "../components/EnquiryForm";
+import { usePathname } from "next/navigation";
 
 
 const PaperNapkin = () => {
   const [activeIndex, setActiveIndex] = useState(null);
   const [open, setOpen] = useState(false);
+    const path = usePathname();
+    const totalwords = path.split("/")[1].split("-");
   
 
   return (
     <> 
       {open && <Form setOpen={setOpen}/>} 
       <div>
-        <MobileStickyFooter></MobileStickyFooter>
       {/* hero done  */}
       <section className="bg-[#F2A99B] flex flex-col gap-1 items-center px-2 py-5 lg:py-6">
         <p className="font-bebas text-2xl text-white md:text-4xl">
@@ -314,7 +316,7 @@ const PaperNapkin = () => {
                </p>
              </div>
      
-             <div className="grid gap-11 grid-cols-2 md:grid-cols-6 md:items-center lg:gap-15">
+             <div className="grid gap-11 grid-cols-2 md:grid-cols-7 md:items-center lg:gap-5">
                {[
                  "/ecom2/logo1.webp",
                  "/ecom2/logo2.webp",
@@ -322,7 +324,7 @@ const PaperNapkin = () => {
                  "/ecom2/logo5.webp",
                  "/ecom2/logo8.webp",
                  "/ecom2/logo.webp",
-                 ,
+                 "/ecom2/cropped-matrix-logo-Photoroom-2.png",
                ].map((feature, index) => (
                  <Image
                    src={feature}
@@ -449,12 +451,14 @@ const PaperNapkin = () => {
                 <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100 flex flex-col justify-between hover:shadow-xl transition-all duration-300 hover:-translate-y-1 relative group h-50">
                   <Quote className="absolute top-4 right-4 text-red-200 w-6 h-6 opacity-50 group-hover:opacity-100 transition-opacity" />
 
-                  <p className="text-gray-700 italic mb-6 leading-6 md:leading-7 text-lg md:text-lg">
+                  <p className="text-gray-700 italic mb-6 leading-6 md:leading-7 text-sm md:text-base">
                     "{item.quote}"
                   </p>
 
                   <div className="border-t border-red-100 pt-3">
-                    
+                    <p className="font-bold text-red-700 text-xs md:text-sm tracking-wide uppercase">
+                      — {item.author}
+                    </p>
                   </div>
                 </div>
               </SwiperSlide>
@@ -516,6 +520,7 @@ const PaperNapkin = () => {
 
      
     </div>
+    <EnquiryForm totalwords={totalwords} />
     </>
 
   );

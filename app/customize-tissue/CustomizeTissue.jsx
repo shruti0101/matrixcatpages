@@ -26,7 +26,7 @@ import {
   premiumCustomizedFacialTissue,
   testimonialCustomerTissue,
   testimonialsData,
-  faqsCustomizeFaceTissue
+  faqsCustomizeFaceTissue,
 } from "@/data";
 import {
   BookCheck,
@@ -44,17 +44,25 @@ import "swiper/css";
 import "swiper/css/pagination";
 import Form from "../components/Form";
 import EnquiryForm from "../components/EnquiryForm";
-import { useParams, usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 const CustomizeTissue = () => {
-
   const path = usePathname();
   const totalwords = path.split("/")[1].split("-");
 
-  
-
   const [activeIndex, setActiveIndex] = useState(null);
   const [open, setOpen] = useState(null);
+
+  const gallery = [
+    { image: "/gallery/1.webp" },
+    { image: "/gallery/2.webp" },
+    { image: "/gallery/3.webp" },
+    { image: "/gallery/4.webp" },
+    { image: "/gallery/5.webp" },
+    { image: "/gallery/6.webp" },
+    { image: "/gallery/7.webp" },
+    { image: "/gallery/8.webp" },
+  ];
 
   const exploreLinks = [
     { label: "Home", href: "/" },
@@ -254,6 +262,60 @@ const CustomizeTissue = () => {
               a preferred choice for businesses looking for customized facial
               tissue and paper napkins in Delhi.
             </p>
+          </div>
+        </section>
+
+        <section className="py-9 px-4 overflow-hidden">
+          <div className="max-w-7xl mx-auto">
+            <h1 className="text-4xl font-semibold text-center">
+              Our Latest Creations
+            </h1>
+
+            <p className="text-xl text-slate-500 text-center mt-2 max-w-2xl mx-auto">
+              A visual collection of our most recent works - each piece crafted
+              with intention, emotion, and style.
+            </p>
+
+            <div className="mt-12">
+              <Swiper
+                modules={[Autoplay]}
+                spaceBetween={20}
+                loop={true}
+                speed={2500}
+                autoplay={{
+                  delay: 1,
+                  disableOnInteraction: false,
+                  pauseOnMouseEnter: false,
+                }}
+                allowTouchMove={false}
+                breakpoints={{
+                  320: {
+                    slidesPerView: 1,
+                  },
+                  640: {
+                    slidesPerView: 2,
+                  },
+                  768: {
+                    slidesPerView: 3,
+                  },
+                  1024: {
+                    slidesPerView: 4,
+                  },
+                }}
+              >
+                {gallery.map((item) => (
+                  <SwiperSlide key={item.id}>
+                    <div className="relative !ease-linear bg-white group hover:-translate-y-3 transition-all duration-300 rounded-xl overflow-hidden">
+                      <img
+                        src={item.image}
+                        alt="gallery"
+                        className="w-full h-72 object-cover"
+                      />
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </div>
           </div>
         </section>
 

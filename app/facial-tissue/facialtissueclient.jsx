@@ -30,10 +30,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
-
+import EnquiryForm from "../components/EnquiryForm";
 import { usePathname } from "next/navigation";
-import EnquiryForm from "@/components/Enquiryform";
-import Form from "@/components/Form";
+// import Form from "@/components/Form";
 
 
 // const exploreLinks = [
@@ -124,6 +123,10 @@ const featuredproducts = [
 const Home = () => {
   const [activeIndex, setActiveIndex] = useState(null);
    const [open,setOpen]=useState(false)
+
+       const path = usePathname();
+       const totalwords = path.split("/")[1].split("-");
+   
 
 
   return (

@@ -2,7 +2,6 @@ import { Bebas_Neue, Open_Sans, Teko } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
-import EnquiryForm from "./components/EnquiryForm";
 
 const openSans = Open_Sans({
   subsets: ["latin"],
@@ -41,7 +40,7 @@ export default function RootLayout({ children }) {
       <body className="min-h-full flex flex-col">
         <Navbar />
         {children}
-        <EnquiryForm/>
+       
         <Footer/>
       </body>
     </html>
